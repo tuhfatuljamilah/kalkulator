@@ -1,56 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html >
 <head>
-    <title>Tutorial Membuat Kalkulator Dengan PHP MySQL</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="UTF-8">
+  <title>JavaScript Kalkulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+ 
+      <link rel="stylesheet" href="css/style.css">
+
+ 
 </head>
+
 <body>
-    <?php 
-        if(isset($_POST['hitung'])){
-            $bil1    =$_POST['bil1'];
-            $bil2    =$_POST['bil2'];
-            $operasi=$_POST['operasi'];
-        
-            switch ($operasi) {
-                case 'tambah':
-                $hasil = $bil1+$bil2;
-                break;
-                case 'kurang':
-                $hasil = $bil1-$bil2;
-                break;
-                case 'kali':
-                $hasil = $bil1*$bil2;
-                break;
-                case 'bagi':
-                $hasil = $bil1/$bil2;
-                break; 
-            }
-        }
-    ?>
-    <div class="kalkulator">
-        <h4 class="judul">KALKULATOR SEDERHANA</h4>
-        <form method="post" action="./"> 
-            <input type="text" name="bil1" class="bil" placeholder="Bilangan 1" required/>
-            <input type="text" name="bil2" class="bil" placeholder="Bilangan 2" required/>
-            <select class="opt" name="operasi">
-                <option value="tambah">+</option>
-                <option value="kurang">-</option>
-                <option value="kali">x</option>
-                <option value="bagi">/</option>
-            </select>
-            <input type="submit" name="hitung" value="Hitung" class="tombol"/> 
-            <a href="./" style="text-decoration:none;"><input type="button" value="Hapus" class="tombol"/></a> 
-        </form>
-        <?php if(isset($_POST['hitung'])){
-        ?>
-            <input type="text" value="<?php echo $hasil; ?>" class="hasil"/>
-        <?php
-        }
-        else{
-        ?>
-            <input type="text" value="0" class="hasil"/>
-        <?php
-        }
-        ?> 
-    </div>
+  <h1>JavaScript Kalkulator</h1>
+<p class="warning">Jangan masukan angka 0</p>
+
+<div id="calculator" class="calculator">
+
+  <button id="clear" class="clear">C</button>
+
+  <div id="viewer" class="viewer">0</div>
+
+  <button class="num" data-num="7">7</button>
+  <button class="num" data-num="8">8</button>
+  <button class="num" data-num="9">9</button>
+  <button data-ops="plus" class="ops">+</button>
+
+  <button class="num" data-num="4">4</button>
+  <button class="num" data-num="5">5</button>
+  <button class="num" data-num="6">6</button>
+  <button data-ops="minus" class="ops">-</button>
+
+  <button class="num" data-num="1">1</button>
+  <button class="num" data-num="2">2</button>
+  <button class="num" data-num="3">3</button>
+  <button data-ops="times" class="ops">*</button>
+
+  <button class="num" data-num="0">0</button>
+  <button class="num" data-num=".">.</button>
+  <button id="equals" class="equals" data-result="">=</button>
+  <button data-ops="divided by" class="ops">/</button>
+</div>
+
+<button id="reset" class="reset">Reset?</button>
+ 
+    <script src="js/index.js"></script>
+
 </body>
 </html>
