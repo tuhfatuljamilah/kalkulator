@@ -1,52 +1,50 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>JavaScript Kalkulator</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
- 
-      <link rel="stylesheet" href="css/style.css">
-
- 
+	<title>Membuat Kalkulator Sederhana Dengan Javascript | www.abdulhafizh.com</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
-
 <body>
-  <h1>JavaScript Kalkulator</h1>
-<p class="warning">Jangan masukan angka 0</p>
-
-<div id="calculator" class="calculator">
-
-  <button id="clear" class="clear">C</button>
-
-  <div id="viewer" class="viewer">0</div>
-
-  <button class="num" data-num="7">7</button>
-  <button class="num" data-num="8">8</button>
-  <button class="num" data-num="9">9</button>
-  <button data-ops="plus" class="ops">+</button>
-
-  <button class="num" data-num="4">4</button>
-  <button class="num" data-num="5">5</button>
-  <button class="num" data-num="6">6</button>
-  <button data-ops="minus" class="ops">-</button>
-
-  <button class="num" data-num="1">1</button>
-  <button class="num" data-num="2">2</button>
-  <button class="num" data-num="3">3</button>
-  <button data-ops="times" class="ops">*</button>
-
-  <button class="num" data-num="0">0</button>
-  <button class="num" data-num=".">.</button>
-  <button id="equals" class="equals" data-result="">=</button>
-  <button data-ops="divided by" class="ops">/</button>
+<div class="container">
+	<div class="row">
+		<div class="card text-center">
+		  <div class="card-body">
+		  	<form name="hitung">
+		  		<span class="float-left ab"><a href="https://www.abdulhafizh.com" target="_blank">abdulhafizh.com</a></span>
+		  		<span class="float-right" onclick="window.location.reload(true);"><ion-icon name="refresh"></ion-icon></span>
+			  	<input class="form-control form-control-lg" type="text" name="hasil" placeholder="0" readonly>
+			  	<table>
+			  		<tr>
+			  			<td><input type="button" class="btn btn-light" value="7" onclick="hitung.hasil.value += '7'"></td>
+			  			<td><input type="button" class="btn btn-light" value="8" onclick="hitung.hasil.value += '8'"></td>
+			  			<td><input type="button" class="btn btn-light" value="9" onclick="hitung.hasil.value += '9'"></td>
+			  			<td><input type="button" class="btn btn-dark" value="/" onclick="hitung.hasil.value += ' / '"></td>
+			  		</tr>
+			  		<tr>
+			  			<td><input type="button" class="btn btn-light" value="4" onclick="hitung.hasil.value += '4'"></td>
+			  			<td><input type="button" class="btn btn-light" value="5" onclick="hitung.hasil.value += '5'"></td>
+			  			<td><input type="button" class="btn btn-light" value="6" onclick="hitung.hasil.value += '6'"></td>
+			  			<td><input type="button" class="btn btn-dark" value="x" onclick="hitung.hasil.value += ' * '"></td>
+			  		</tr>
+			  		<tr>
+			  			<td><input type="button" class="btn btn-light" value="1" onclick="hitung.hasil.value += '1'"></td>
+			  			<td><input type="button" class="btn btn-light" value="2" onclick="hitung.hasil.value += '2'"></td>
+			  			<td><input type="button" class="btn btn-light" value="3" onclick="hitung.hasil.value += '3'"></td>
+			  			<td><input type="button" class="btn btn-dark" value="-" onclick="hitung.hasil.value += ' - '"></td>
+			  		</tr>
+			  		<tr>
+			  			<td><input type="button" class="btn btn-light" value="0" onclick="hitung.hasil.value += '0'"></td>
+			  			<td><input type="button" class="btn btn-light" value="." onclick="hitung.hasil.value += '.'"></td>
+			  			<td><input type="button" class="btn btn-primary" value="=" onclick="hitung.hasil.value = hitung.hasil.value + ' = ' +eval(hitung.hasil.value)"></td>
+			  			<td><input type="button" class="btn btn-dark" value="+" onclick="hitung.hasil.value += ' + '"></td>
+			  		</tr>
+			  	</table>	
+		  	</form>			    				    
+		  </div>
+		</div>
+	</div>
 </div>
-
-<button id="reset" class="reset">Reset?</button>
- 
-    <script src="js/index.js"></script>
-
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
 </body>
 </html>
